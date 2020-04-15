@@ -111,3 +111,9 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /Users/bogdan/Library/Python/3.7/bin/virtualenvwrapper.sh
+
+# GCloud
+# aliases
+alias gprod="gcloud --project=solvemate-prod"
+alias gtest="gcloud --project=solvemate-test"
+alias gstage="gcloud --project=solvemate-staging"
