@@ -112,6 +112,9 @@ export PROJECT_HOME=$HOME/Development
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /Users/bogdan/Library/Python/3.7/bin/virtualenvwrapper.sh
 
+#Python poetry
+source $HOME/.poetry/env
+
 # GCloud
 # aliases
 alias gprod="gcloud --project=solvemate-prod"
