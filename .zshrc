@@ -120,3 +120,5 @@ source $HOME/.poetry/env
 alias gprod="gcloud --project=solvemate-prod"
 alias gtest="gcloud --project=solvemate-test"
 alias gstage="gcloud --project=solvemate-staging"
+# PUB/SUB emulator
+PUBSUB_EMULATOR_HOST=localhost:8085
