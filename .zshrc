@@ -122,3 +122,9 @@ alias gtest="gcloud --project=solvemate-test"
 alias gstage="gcloud --project=solvemate-staging"
 # PUB/SUB emulator
 PUBSUB_EMULATOR_HOST=localhost:8085
+
+# default project
+export GOOGLE_CLOUD_PROJECT=solvemate-test
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
