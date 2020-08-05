@@ -95,10 +95,17 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# aliases
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+alias glrp="gup --prune $@ && gsu --init --recursive"
+alias gsave="gaa && gc -m 'SAVEPOINT'"
+alias gwip="gcam 'WIP'"
+alias gundo="git reset HEAD~1 --mixed"
+alias gamend="gca!"
+alias gdefault="git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+alias gbclean="!f() { DEFAULT=$(gdefault); gb --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs gbd; }; f"
+alias gbdone="!f() { DEFAULT=$(gdefault); gco ${1-$DEFAULT} && glrp && gbclean ${1-$DEFAULT}; }; f"
 
 #NVM
 export NVM_DIR="$HOME/.nvm"
