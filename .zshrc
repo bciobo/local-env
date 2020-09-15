@@ -104,8 +104,9 @@ alias gwip="gcam 'WIP'"
 alias gundo="git reset HEAD~1 --mixed"
 alias gamend="gca!"
 alias gdefault="git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
-alias gbclean="!f() { DEFAULT=$(gdefault); gb --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs gbd; }; f"
-alias gbdone="!f() { DEFAULT=$(gdefault); gco ${1-$DEFAULT} && glrp && gbclean ${1-$DEFAULT}; }; f"
+# alias gbclean="!f() { DEFAULT=$(gdefault); gb --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs gbd; }; f"
+# alias gbdone="!f() { DEFAULT=$(gdefault); gco ${1-$DEFAULT} && glrp && gbclean ${1-$DEFAULT}; }; f"
+alias k="kubectl"
 
 #NVM
 export NVM_DIR="$HOME/.nvm"
