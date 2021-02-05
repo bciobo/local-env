@@ -141,3 +141,6 @@ export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
 
 # gnutls
 export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
+
+#Solvemate dir
+export SOLVEMATE_DIR="~/Documents/Solvemate"
