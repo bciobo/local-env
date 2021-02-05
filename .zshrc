@@ -68,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew osx z nvm docker virtualenv mongodb ng)
+plugins=(git colored-man-pages colorize pip python brew osx z nvm docker virtualenv mongodb ng pyenv poetry)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -118,7 +118,7 @@ export NVM_DIR="$HOME/.nvm"
 PATH=$PATH:/Users/bogdan/Library/Python/3.7/bin
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/Users/bogdan/.pyenv/versions/3.7.3/bin/python
 source /Users/bogdan/Library/Python/3.7/bin/virtualenvwrapper.sh
 
 #Python poetry
