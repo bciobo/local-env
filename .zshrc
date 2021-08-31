@@ -1,10 +1,12 @@
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source ~/powerlevel10k/powerlevel10k.zsh-theme # load powerlevel10k
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -76,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew osx z nvm docker virtualenv mongodb ng pyenv poetry)
+plugins=(git colored-man-pages colorize pip python brew osx z nvm docker virtualenv ng pyenv)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -119,18 +121,18 @@ alias s="solvematectl"
 
 #NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Python Virtualenvwrapper
 PATH=$PATH:/Users/bogdan/Library/Python/3.7/bin
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
 export VIRTUALENVWRAPPER_PYTHON=/Users/bogdan/.pyenv/versions/3.7.3/bin/python
-source /Users/bogdan/Library/Python/3.7/bin/virtualenvwrapper.sh
+# source /Users/bogdan/Library/Python/3.7/bin/virtualenvwrapper.sh
 
 #Python poetry
-source $HOME/.poetry/env
+# source $HOME/.poetry/env
 
 # GCloud
 # aliases
@@ -152,6 +154,3 @@ export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
 #Solvemate dir
 export SOLVEMATE_DIR="~/Documents/Solvemate"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
