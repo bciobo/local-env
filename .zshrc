@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew osx z nvm docker virtualenv ng pyenv)
+plugins=(git colored-man-pages colorize pip python brew osx z nvm docker virtualenv ng npx)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -123,7 +123,6 @@ alias s="solvematectl"
 export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Python Virtualenvwrapper
 PATH=$PATH:/Users/bogdan/Library/Python/3.7/bin
 export WORKON_HOME=$HOME/.virtualenvs
@@ -154,3 +153,29 @@ export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
 #Solvemate dir
 export SOLVEMATE_DIR="~/Documents/Solvemate"
+
+#Netlify CLI
+export PATH=/Users/bogdan/.nvm/versions/node/v14.17.5/bin:$PATH
+
+#Java
+eval export PATH="/Users/bogdan/.jenv/shims:${PATH}"
+export JENV_SHELL=zsh
+export JENV_LOADED=1
+unset JAVA_HOME
+source '/opt/homebrew/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
+jenv rehash 2>/dev/null
+jenv refresh-plugins
+jenv() {
+  typeset command
+  command="$1"a
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  enable-plugin|rehash|shell|shell-options)
+    eval `jenv "sh-$command" "$@"`;;
+  *)
+    command jenv "$command" "$@";;
+  esac
+}
