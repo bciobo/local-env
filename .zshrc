@@ -9,7 +9,7 @@ fi
 # source ~/powerlevel10k/powerlevel10k.zsh-theme # load powerlevel10k
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/bogdan/.oh-my-zsh"
@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew osx z nvm docker virtualenv ng npx)
+plugins=(git colored-man-pages colorize pip python brew macos z nvm docker virtualenv ng npx kubectx)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -141,18 +141,12 @@ alias gstage="gcloud --project=solvemate-staging"
 # PUB/SUB emulator
 PUBSUB_EMULATOR_HOST=localhost:8085
 
-# default project
-export GOOGLE_CLOUD_PROJECT=solvemate-test
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
 
 # gnutls
 export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
-
-#Solvemate dir
-export SOLVEMATE_DIR="~/Documents/Solvemate"
 
 #Netlify CLI
 export PATH=/Users/bogdan/.nvm/versions/node/v14.17.5/bin:$PATH
@@ -179,3 +173,10 @@ jenv() {
     command jenv "$command" "$@";;
   esac
 }
+
+#K8S
+export KUBECONFIG="$HOME/.kube/marketplace-staging-kubeconfig.yaml:$HOME/.kube/marketplace-production-kubeconfig.yaml"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
