@@ -180,3 +180,6 @@ export KUBECONFIG="$HOME/.kube/marketplace-staging-kubeconfig.yaml:$HOME/.kube/m
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# LINUS
+export NPM_TOKEN=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
