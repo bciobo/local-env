@@ -117,7 +117,8 @@ alias gdefault="git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes
 # alias gbclean="!f() { DEFAULT=$(gdefault); gb --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs gbd; }; f"
 # alias gbdone="!f() { DEFAULT=$(gdefault); gco ${1-$DEFAULT} && glrp && gbclean ${1-$DEFAULT}; }; f"
 alias k="kubectl"
-alias s="solvematectl"
+alias dcup="docker compose up -d"
+alias dcdown="docker compose down"
 
 #NVM
 export NVM_DIR="$HOME/.nvm"
