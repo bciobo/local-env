@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew macos z nvm docker virtualenv ng npx kubectx terraform)
+plugins=(git colored-man-pages colorize pip python brew macos z nvm docker virtualenv ng kubectx terraform sublime)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -178,9 +178,9 @@ jenv() {
 #K8S
 export KUBECONFIG="$HOME/.kube/marketplace-staging-kubeconfig.yaml:$HOME/.kube/marketplace-production-kubeconfig.yaml"
 
+# LINUS
+export NPM_TOKEN=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
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# LINUS
-export NPM_TOKEN=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
