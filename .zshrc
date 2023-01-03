@@ -12,7 +12,7 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/bogdan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew macos z nvm docker virtualenv ng kubectx terraform sublime)
+plugins=(git colored-man-pages colorize pip python brew macos z nvm docker virtualenv pipenv ng kubectx terraform)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -116,71 +116,48 @@ alias gamend="gca!"
 alias gdefault="git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
 # alias gbclean="!f() { DEFAULT=$(gdefault); gb --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs gbd; }; f"
 # alias gbdone="!f() { DEFAULT=$(gdefault); gco ${1-$DEFAULT} && glrp && gbclean ${1-$DEFAULT}; }; f"
+alias glasttag="git describe --tags --abbrev=0"
+alias gunreleased="git describe --tags --abbrev=0 | xargs -I{} git log {}..HEAD --oneline"
 alias k="kubectl"
 alias dcup="docker compose up -d"
 alias dcdown="docker compose down"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 #NVM
 export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # Python Virtualenvwrapper
-PATH=$PATH:/Users/bogdan/Library/Python/3.7/bin
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Development
-export VIRTUALENVWRAPPER_PYTHON=/Users/bogdan/.pyenv/versions/3.7.3/bin/python
-# source /Users/bogdan/Library/Python/3.7/bin/virtualenvwrapper.sh
+# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+pyenv virtualenvwrapper
+# PATH=$PATH:$HOME/Library/Python/3.7/bin
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/development
+# export VIRTUALENVWRAPPER_PYTHON=$HOME/.pyenv/shims/python3
+# source virtualenvwrapper.sh
 
 #Python poetry
 # source $HOME/.poetry/env
 
 # GCloud
 # aliases
-alias gprod="gcloud --project=solvemate-prod"
-alias gtest="gcloud --project=solvemate-test"
-alias gstage="gcloud --project=solvemate-staging"
+#alias gprod="gcloud --project=solvemate-prod"
+#alias gtest="gcloud --project=solvemate-test"
+#alias gstage="gcloud --project=solvemate-staging"
 # PUB/SUB emulator
-PUBSUB_EMULATOR_HOST=localhost:8085
+#PUBSUB_EMULATOR_HOST=localhost:8085
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
+#export PATH="/usr/local/opt/mongodb-community@4.0/bin:$PATH"
 
 # gnutls
 export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
-#Netlify CLI
-export PATH=/Users/bogdan/.nvm/versions/node/v14.17.5/bin:$PATH
-
-#Java
-eval export PATH="/Users/bogdan/.jenv/shims:${PATH}"
-export JENV_SHELL=zsh
-export JENV_LOADED=1
-unset JAVA_HOME
-source '/opt/homebrew/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
-jenv rehash 2>/dev/null
-jenv refresh-plugins
-jenv() {
-  typeset command
-  command="$1"a
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  enable-plugin|rehash|shell|shell-options)
-    eval `jenv "sh-$command" "$@"`;;
-  *)
-    command jenv "$command" "$@";;
-  esac
-}
-
-#K8S
-export KUBECONFIG="$HOME/.kube/marketplace-staging-kubeconfig.yaml:$HOME/.kube/marketplace-production-kubeconfig.yaml"
-
-# LINUS
-export NPM_TOKEN=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
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="$HOME/.sdkman"
+#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
