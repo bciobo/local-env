@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew macos z nvm docker virtualenv pipenv ng kubectx terraform)
+plugins=(git colored-man-pages colorize pip python brew macos z nvm docker virtualenv pipenv ng kubectx terraform aws)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -161,3 +161,6 @@ export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #export SDKMAN_DIR="$HOME/.sdkman"
 #[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# BEN
+export AWS_PROFILE=PowerUserAccess-547369612378
