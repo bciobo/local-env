@@ -132,8 +132,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # Python Virtualenvwrapper
-# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 pyenv virtualenvwrapper
+# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 # PATH=$PATH:$HOME/Library/Python/3.7/bin
 # export WORKON_HOME=$HOME/.virtualenvs
 # export PROJECT_HOME=$HOME/development
@@ -164,3 +164,5 @@ export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
 # BEN
 export AWS_PROFILE=PowerUserAccess-547369612378
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

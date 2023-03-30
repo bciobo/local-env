@@ -15,7 +15,6 @@ source .zshrc
 brew install python
 brew install pyenv
 brew install pyenv-virtualenvwrapper
-brew install pipenv
 
 brew install itsycal
 brew install --cask transmission
