@@ -116,6 +116,7 @@ alias gamend="gca!"
 alias gdefault="git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
 # alias gbclean="!f() { DEFAULT=$(gdefault); gb --merged ${1-$DEFAULT} | grep -v \" ${1-$DEFAULT}$\" | xargs gbd; }; f"
 # alias gbdone="!f() { DEFAULT=$(gdefault); gco ${1-$DEFAULT} && glrp && gbclean ${1-$DEFAULT}; }; f"
+alias grelease='f() { git tag -a "$1" -m "release" }'
 alias glasttag="git describe --tags --abbrev=0"
 alias gunreleased="git describe --tags --abbrev=0 | xargs -I{} git log {}..HEAD --oneline"
 alias k="kubectl"
@@ -166,3 +167,11 @@ export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 export AWS_PROFILE=PowerUserAccess-547369612378
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+ENV_FILE=local-pytest.env
+
+# GitHub
+# export GITHUB_TOKEN=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
+export GITHUB_TOKEN=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
+source /Users/bciobo/.config/op/plugins.sh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

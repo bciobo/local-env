@@ -30,5 +30,6 @@ brew install npm
 brew install nvm
 brew install --cask postman
 brew install --cask sublime-text
+brew install gh
 
 brew install ngrok/ngrok/ngrok
